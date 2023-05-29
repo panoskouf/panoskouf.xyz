@@ -13,9 +13,9 @@ export const useDebugProvider = () => {
     }
 
     (window as any).enableDebug = () => {
-      // if user presses the key S, enable debug mode
       addEventListener('keydown', (event) => {
         if (event.key === 's') {
+          // toggle visibility of <Space /> component
           const toggleEnableSpaceDebugging = !enabledDebugOptions.value.space;
 
           enabledDebugOptions.value = {
