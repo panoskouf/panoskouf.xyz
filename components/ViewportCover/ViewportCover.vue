@@ -7,7 +7,7 @@ import Positioned from '~/component-library/Positioned.vue';
 
 <template>
   <Box width="100%" height="100vh" style="position: relative">
-    <Positioned mode="absolute" all="24px" class="cover">
+    <Positioned class="cover" mode="absolute" all="24px">
       <slot />
     </Positioned>
   </Box>

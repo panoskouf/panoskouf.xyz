@@ -6,19 +6,19 @@ export type Props = {
   y?: string;
   top?: string;
   right?: string;
-  left?: string;
   bottom?: string;
-  allFallback?: string;
+  left?: string;
+  fallbackAll?: string;
 };
 
 const props = withDefaults(defineProps<Props>(), {
   mode: 'relative',
 });
 
-const _top = ref(props.all || props.y || props.top || props.allFallback);
-const _right = ref(props.all || props.x || props.right || props.allFallback);
-const _bottom = ref(props.all || props.y || props.bottom || props.allFallback);
-const _left = ref(props.all || props.x || props.left || props.allFallback);
+const _top = ref(props.all || props.y || props.top || props.fallbackAll);
+const _right = ref(props.all || props.x || props.right || props.fallbackAll);
+const _bottom = ref(props.all || props.y || props.bottom || props.fallbackAll);
+const _left = ref(props.all || props.x || props.left || props.fallbackAll);
 </script>
 
 <template>
@@ -29,8 +29,8 @@ const _left = ref(props.all || props.x || props.left || props.allFallback);
 .positioned {
   position: v-bind('mode');
   top: v-bind('_top');
-  left: v-bind('_left');
   right: v-bind('_right');
   bottom: v-bind('_bottom');
+  left: v-bind('_left');
 }
 </style>
