@@ -1,26 +1,21 @@
+<script setup lang="ts">
+import { background } from '~/styles';
+// @todo fix imports
+import Box from '~/component-library/Box.vue';
+import Positioned from '~/component-library/Positioned.vue';
+</script>
+
 <template>
-  <div class="viewportCoverContainer">
-    <div class="viewportCover">
+  <Box width="100%" height="100vh" style="position: relative">
+    <Positioned mode="absolute" all="24px" class="cover">
       <slot />
-    </div>
-  </div>
+    </Positioned>
+  </Box>
 </template>
 
 <style lang="scss" scoped>
-$whitespaceGap: 24px;
-.viewportCoverContainer {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-}
-.viewportCover {
-  // @todo how can I avoid including this everywhere ?
-  // @todo investigate why @use throws an error
-  @import '~/styles';
-
-  position: absolute;
-  @include inset($whitespaceGap);
-  background-color: $backgroundColor;
+.cover {
+  background-color: v-bind('background.primary');
   border-radius: 16px;
 }
 </style>
