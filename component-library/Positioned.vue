@@ -13,6 +13,7 @@ export type Props = {
 
 const props = withDefaults(defineProps<Props>(), {
   mode: 'relative',
+  fallbackAll: 'auto',
 });
 
 const _top = computed(

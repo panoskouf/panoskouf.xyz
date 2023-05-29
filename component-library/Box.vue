@@ -4,7 +4,10 @@ export type Props = {
   height?: string;
 };
 
-const props = defineProps<Props>();
+const props = withDefaults(defineProps<Props>(), {
+  width: '100%',
+  height: 'auto',
+});
 </script>
 
 <template>
