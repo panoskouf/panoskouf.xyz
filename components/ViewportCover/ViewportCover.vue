@@ -14,12 +14,13 @@ $whitespaceGap: 24px;
   position: relative;
 }
 .viewportCover {
+  // @todo how can I avoid including this everywhere ?
+  // @todo investigate why @use throws an error
+  @import '~/styles';
+
   position: absolute;
-  top: $whitespaceGap;
-  left: $whitespaceGap;
-  background-color: #f9f3e7;
-  height: calc(100% - #{$whitespaceGap * 2});
-  width: calc(100% - #{$whitespaceGap * 2});
+  @include inset($whitespaceGap);
+  background-color: $backgroundColor;
   border-radius: 16px;
 }
 </style>
