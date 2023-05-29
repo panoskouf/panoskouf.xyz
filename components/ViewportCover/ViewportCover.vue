@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { background } from '~/styles';
+import { colors } from '~/styles';
 // @todo fix imports
 import Box from '~/component-library/Box.vue';
 import Positioned from '~/component-library/Positioned.vue';
@@ -15,7 +15,7 @@ import Positioned from '~/component-library/Positioned.vue';
 
 <style lang="scss" scoped>
 .cover {
-  background-color: v-bind('background.primary');
+  background-color: v-bind('colors.bgSecondary');
   border-radius: 16px;
 }
 </style>
