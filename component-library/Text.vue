@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Color, colors, getColor } from '~/styles';
+import { Color, getColor } from '~/styles';
 
 export type Props = {
   is?: string;
