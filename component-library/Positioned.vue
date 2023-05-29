@@ -15,10 +15,18 @@ const props = withDefaults(defineProps<Props>(), {
   mode: 'relative',
 });
 
-const _top = ref(props.all || props.y || props.top || props.fallbackAll);
-const _right = ref(props.all || props.x || props.right || props.fallbackAll);
-const _bottom = ref(props.all || props.y || props.bottom || props.fallbackAll);
-const _left = ref(props.all || props.x || props.left || props.fallbackAll);
+const _top = computed(
+  () => props.all || props.y || props.top || props.fallbackAll
+);
+const _right = computed(
+  () => props.all || props.x || props.right || props.fallbackAll
+);
+const _bottom = computed(
+  () => props.all || props.y || props.bottom || props.fallbackAll
+);
+const _left = computed(
+  () => props.all || props.x || props.left || props.fallbackAll
+);
 </script>
 
 <template>
